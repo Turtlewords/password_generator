@@ -38,10 +38,64 @@
 }
 
 @font-face {
-    font-family: "jetBrainsBold", sans-serif;
-    src: url("assets/fonts/JetBrainsMono-VariableFont_wght.ttf");
+    font-family: "jetBrainsBold";
+    src: url("assets/fonts/static/JetBrainsMono-Bold.ttf");
 }
 
 body {
-    font-family: "jetBrainsBold";
+    font-family: "jetBrainsBold", sans-serif;
+    background-color: var(--grey-900);
+    
+}
+
+header {
+    padding: 3rem 0 1rem;
+    text-align: center;
+    
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#password {
+    background-color: var(--grey-800);
+    color: var(--grey-200);
+    font-family: inherit;
+
+}
+
+#password::placeholder {
+    color: var(--grey-600);
+}
+
+#char-range {
+    cursor: pointer;
+    accent-color: var(--green-200);
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#form {
+    background-color: var(--grey-800);
+}
+
+/* Typography */
+
+h1 {
+    color: var(--grey-600);
+    font-size: 18px;
+}
+
+label {
+    color: var(--grey-200);
+}
+
+#chat-count {
+    color: var(--green-200);
 }

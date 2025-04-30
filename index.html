@@ -10,21 +10,47 @@
   <title>Frontend Mentor | Password generator app</title>
 </head>
 <body>
-
-  Password Generator
-
-  P4$5W0rD!
-
-  Character Length
-
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
+  <header>
+    <h1>Password Generator</h1>
+  </header>
+  <main>
+    <input type="text" placeholder="P4$5W0rD!" id="password">
+    <form id="form">
+      <label for="char-range">
+        <span><span>Character Length</span><span id="char-count">0</span></span>
+        <input type="range" id="char-range" min="1" max="10">
+      </label>
+      <fieldset>
+        <label for="upper">
+          <input type="checkbox" id="upper">
+          Include Uppercase Letters
+        </label> 
+        <label for="upper">
+          <input type="checkbox" id="lower">
+          Include Lowercase Letters
+        </label> 
+        <label for="upper">
+          <input type="checkbox" id="numbers">
+          Include Numbers
+        </label> 
+        <label for="upper">
+          <input type="checkbox" id="symbols">
+          Include Symbols
+        </label> 
+      </fieldset>
+      <div id="strength-container">
+        <p>STRENGTH</p>
+        <div id="bars">
+          <span id="strength-text"></span>
+          <span id="bar1" class="bars"></span>
+          <span id="bar2" class="bars"></span>
+          <span id="bar3" class="bars"></span>
+          <span id="bar4" class="bars"></span>
+        </div>
+      </div>
+      <button id="generate-btn">Generate</button>
+    </form>
+  </main>
   <script src="index.js"></script>
 </body>
 </html>
