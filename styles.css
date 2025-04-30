@@ -42,9 +42,15 @@
     src: url("assets/fonts/static/JetBrainsMono-Bold.ttf");
 }
 
+img {
+    max-width: 100%;
+}
+
 body {
     font-family: "jetBrainsBold", sans-serif;
     background-color: var(--grey-900);
+    margin: 0;
+    min-height: 100vh;
     
 }
 
@@ -57,22 +63,52 @@ header {
 main {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
+    gap: 1.5rem;
 }
 
-#password {
+#output-container {
     background-color: var(--grey-800);
-    color: var(--grey-200);
+    color: var(--grey-600);
     font-family: inherit;
-
+    padding: 1.5rem;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
-#password::placeholder {
-    color: var(--grey-600);
+#copy:hover {
+    cursor: pointer;
+}
+
+#password-active {
+    color: var(--grey-200);
+}
+
+#char-label {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 #char-range {
     cursor: pointer;
+    accent-color: var(--grey-200);
+    
+}
+
+#char-range:active {
     accent-color: var(--green-200);
+    
+}
+
+
+
+#range-text {
+    display: flex;
+    justify-content: space-between;
 }
 
 fieldset {
@@ -83,8 +119,29 @@ fieldset {
 
 #form {
     background-color: var(--grey-800);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
 }
 
+#strength-container {
+    background-color: var(--grey-900);
+    padding: 0 1rem;
+}
+
+
+#generate-btn {
+    font-family: inherit;
+    font-size: 18px;
+    padding: 1rem;
+    border: none;
+    background-color: var(--green-200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
 /* Typography */
 
 h1 {
@@ -98,4 +155,8 @@ label {
 
 #chat-count {
     color: var(--green-200);
+}
+
+#strength-container p {
+    color: var(--grey-600);
 }
