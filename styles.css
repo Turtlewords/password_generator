@@ -96,6 +96,7 @@ main {
 #copied {
     color: var(--green-200);
     font-size: 16px;
+    visibility: hidden;
 }
 
 #password-active {
@@ -111,6 +112,7 @@ main {
 #char-range {
     cursor: pointer;
     accent-color: var(--grey-200);
+    ;
     
 }
 
@@ -135,10 +137,17 @@ fieldset {
     margin: 0;
 }
 
+fieldset input {
+    background-color: var(--grey-800);
+}
+
 input[type="checkbox"] {
     accent-color: var(--green-200);
     cursor: pointer;
+    
 }
+
+
 
 #form {
     background-color: var(--grey-800);

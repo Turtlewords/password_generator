@@ -4,6 +4,7 @@ const charRange = document.querySelector("#char-range");
 const charCount = document.querySelector("#char-count");
 const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
 const copy = document.querySelector("#copy");
+const copied = document.querySelector("#copied");
 
 copy.addEventListener("click", copyToClipboard);
 
@@ -14,17 +15,25 @@ generateBtn.addEventListener("click", function(e) {
 
 charRange.addEventListener("change", updateCharacterLength);
 
-function copyToClipboard() {
-    passwordEl.select();
-    passwordEl.setSelectionRange(0, 99999);
 
+
+function copyToClipboard() {
+   
+    copied.style.visibility = "visible";
+    setTimeout(() => {
+        copied.style.visibility = "hidden";
+    },4000)
     navigator.clipboard.writeText(passwordEl.textContent);
+    
 }
 
 function updateCharacterLength() {
     charCount.textContent = charRange.value;
-
 }
+
+
+
+
 
 
 
