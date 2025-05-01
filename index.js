@@ -1,5 +1,6 @@
 const passwordEl = document.getElementById("password-el")
 const generateBtn = document.querySelector("#generate-btn");
+const generateImgBtn = document.querySelector("#generate-btn-img");
 const charRange = document.querySelector("#char-range");
 const charCount = document.querySelector("#char-count");
 const copy = document.querySelector("#copy");
@@ -15,7 +16,17 @@ generateBtn.addEventListener("click", function(e) {
     
     e.preventDefault();
     passwordIsStrong()
+    generateBtnHoverStyle()
 });
+
+generateBtn.addEventListener("mouseover", () => {
+    generateImgBtn.src = "/assets/images/arrow-active.svg";
+})
+
+generateBtn.addEventListener("mouseout", () => {
+    generateImgBtn.src = "/assets/images/icon-arrow-right.svg";
+})
+
 
 charRange.addEventListener("change", updateCharacterLength);
 
@@ -66,7 +77,9 @@ function passwordIsStrong() {
     }
 }
 
-
+function generateBtnHoverStyle() {
+    generateImgBtn.src = "/assets/images/arrow-active.svg";
+}
 
 
 

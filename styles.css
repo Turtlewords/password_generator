@@ -194,6 +194,10 @@ input[type="checkbox"] {
     color: var(--green-200);
 }
 
+#generate-btn-img {
+    width: 12px;
+}
+
 /* Typography */
 
 h1 {
