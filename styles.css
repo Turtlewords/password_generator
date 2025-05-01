@@ -111,13 +111,12 @@ main {
 
 #char-range {
     cursor: pointer;
-    accent-color: var(--grey-200);
-    ;
+    accent-color: var(--green-200);
     
 }
 
 #char-range:active {
-    accent-color: var(--green-200);
+    
     
 }
 
@@ -188,6 +187,13 @@ input[type="checkbox"] {
     gap: 1.5rem;
     cursor: pointer;
 }
+
+#generate-btn:hover {
+    background-color: var(--grey-800);
+    outline: 2px solid var(--green-200);
+    color: var(--green-200);
+}
+
 /* Typography */
 
 h1 {
