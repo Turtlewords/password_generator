@@ -22,7 +22,7 @@ generateBtn.addEventListener("click", function(e) {
     e.preventDefault();
     generatePassword()
     generateBtnHoverStyle()
-    generateImgBtn.src = "/assets/images/arrow-active.svg";
+    generateImgBtn.src = "assets/images/arrow-active.svg";
 });
 
 generateBtn.addEventListener("mouseover", () => {
