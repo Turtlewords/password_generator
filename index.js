@@ -61,6 +61,7 @@ function clearBars() {
 
 function passwordIsTooWeak() {
     clearBars()
+    passwordEl.style.color = "#FFFFFF";
     strengthText.textContent = "TOO WEAK!";
     bars[0].style.outlineColor = "#F64A4A";
     bars[0].style.backgroundColor = "#F64A4A"
@@ -68,6 +69,7 @@ function passwordIsTooWeak() {
 
 function passwordIsWeak() {
     clearBars()
+    passwordEl.style.color = "#FFFFFF";
     strengthText.textContent = "WEAK";
     for (let i = 0; i < bars.length - 2; i++) {
         bars[i].style.outlineColor = "#FB7C58";
@@ -77,6 +79,7 @@ function passwordIsWeak() {
 
 function passwordIsMedium() {
     clearBars()
+    passwordEl.style.color = "#FFFFFF";
     strengthText.textContent = "MEDIUM";
     for (let i = 0; i < bars.length - 1; i++) {
         bars[i].style.outlineColor = "#F8CD65";
@@ -86,6 +89,7 @@ function passwordIsMedium() {
 
 function passwordIsStrong() {
     clearBars()
+    passwordEl.style.color = "#FFFFFF";
     strengthText.textContent = "STRONG";
     
     for (let i = 0; i < bars.length; i++) {
@@ -133,6 +137,8 @@ function generatePassword() {
     if (len < 1) {
         alert("Please check at least one box");
         clearBars()
+        passwordEl.style.color = "#817D92"
+        passwordEl.textContent = "P4$5W0rD!"
         return;
     }
 
