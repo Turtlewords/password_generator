@@ -51,14 +51,23 @@ function updateCharacterLength() {
     charCount.textContent = charRange.value;
 }
 
+function clearBars() {
+    bars.forEach((bar) => {
+        bar.style.outlineColor = "#FFFFFF";
+        bar.style.backgroundColor = "#14131B"
+    })
+    strengthText.textContent = "";
+}
 
 function passwordIsTooWeak() {
+    clearBars()
     strengthText.textContent = "TOO WEAK!";
     bars[0].style.outlineColor = "#F64A4A";
     bars[0].style.backgroundColor = "#F64A4A"
 }
 
 function passwordIsWeak() {
+    clearBars()
     strengthText.textContent = "WEAK";
     for (let i = 0; i < bars.length - 2; i++) {
         bars[i].style.outlineColor = "#FB7C58";
@@ -67,6 +76,7 @@ function passwordIsWeak() {
 }
 
 function passwordIsMedium() {
+    clearBars()
     strengthText.textContent = "MEDIUM";
     for (let i = 0; i < bars.length - 1; i++) {
         bars[i].style.outlineColor = "#F8CD65";
@@ -75,7 +85,9 @@ function passwordIsMedium() {
 }
 
 function passwordIsStrong() {
+    clearBars()
     strengthText.textContent = "STRONG";
+    
     for (let i = 0; i < bars.length; i++) {
         bars[i].style.outlineColor = "#A4FFAF";
         bars[i].style.backgroundColor = "#A4FFAF"
@@ -96,26 +108,45 @@ function generateRandom(max) {
 function generatePassword() {
     let passwordLen = charRange.value;
     let password = "";
+    let strengthCount = 0;
 
     let charSet = [];
     if (checkBoxes[0].checked) {
         charSet.push(...lower);
+        strengthCount++;
     }
     if (checkBoxes[1].checked) {
         charSet.push(...upper);
+        strengthCount++;
     }
     if (checkBoxes[2].checked) {
         charSet.push(...numbers);
+        strengthCount++;
     }
     if (checkBoxes[3].checked) {
         charSet.push(...symbols);
+        strengthCount++;
     }
     
     let len = charSet.length;
 
     if (len < 1) {
         alert("Please check at least one box");
+        clearBars()
         return;
+    }
+
+    if (strengthCount == 1) {
+        passwordIsTooWeak()
+    } 
+    if (strengthCount == 2) {
+        passwordIsWeak()
+    }
+    if (strengthCount == 3) {
+        passwordIsMedium()
+    }
+    if (strengthCount == 4) {
+        passwordIsStrong();
     }
 
     for (let i = 0; i < passwordLen; i++) {
