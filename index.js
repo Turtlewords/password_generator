@@ -17,6 +17,7 @@ generateBtn.addEventListener("click", function(e) {
     e.preventDefault();
     passwordIsStrong()
     generateBtnHoverStyle()
+    generateImgBtn.src = "/assets/images/arrow-active.svg";
 });
 
 generateBtn.addEventListener("mouseover", () => {
@@ -77,9 +78,6 @@ function passwordIsStrong() {
     }
 }
 
-function generateBtnHoverStyle() {
-    generateImgBtn.src = "/assets/images/arrow-active.svg";
-}
 
 
 
