@@ -25,11 +25,11 @@ generateBtn.addEventListener("click", function(e) {
 });
 
 generateBtn.addEventListener("mouseover", () => {
-    generateImgBtn.src = "/assets/images/arrow-active.svg";
+    generateImgBtn.src = "assets/images/arrow-active.svg";
 })
 
 generateBtn.addEventListener("mouseout", () => {
-    generateImgBtn.src = "/assets/images/icon-arrow-right.svg";
+    generateImgBtn.src = "assets/images/icon-arrow-right.svg";
 })
 
 
