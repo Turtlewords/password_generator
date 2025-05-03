@@ -7,7 +7,12 @@ const copy = document.querySelector("#copy");
 const copied = document.querySelector("#copied");
 const strengthText = document.querySelector("#strength-text");
 
-const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
+const lower = 'abcdefghijklmnopqrstuvwxyz'.split('');
+const upper = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+const numbers = '0123456789'.split('');
+const symbols = "`~!@#$%^&*()-_+=,<.>/?;:".split('');
+
+const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
 const bars = document.querySelectorAll(".bars");
 
 copy.addEventListener("click", copyToClipboard);
@@ -15,7 +20,7 @@ copy.addEventListener("click", copyToClipboard);
 generateBtn.addEventListener("click", function(e) {
     
     e.preventDefault();
-    passwordIsStrong()
+    generatePassword()
     generateBtnHoverStyle()
 });
 
@@ -79,6 +84,46 @@ function passwordIsStrong() {
 
 function generateBtnHoverStyle() {
     generateImgBtn.src = "/assets/images/arrow-active.svg";
+}
+
+function generateRandom(max) {
+    return Math.floor(Math.random() * max);
+}
+
+
+// write function to determine password strength
+
+function generatePassword() {
+    let passwordLen = charRange.value;
+    let password = "";
+
+    let charSet = [];
+    if (checkBoxes[0].checked) {
+        charSet.push(...lower);
+    }
+    if (checkBoxes[1].checked) {
+        charSet.push(...upper);
+    }
+    if (checkBoxes[2].checked) {
+        charSet.push(...numbers);
+    }
+    if (checkBoxes[3].checked) {
+        charSet.push(...symbols);
+    }
+    
+    let len = charSet.length;
+
+    if (len < 1) {
+        alert("Please check at least one box");
+        return;
+    }
+
+    for (let i = 0; i < passwordLen; i++) {
+        let index = generateRandom(len);
+        password += charSet[index];
+    }
+
+    passwordEl.textContent = password;
 }
 
 
