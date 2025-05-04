@@ -71,7 +71,7 @@ main {
     background-color: var(--grey-800);
     color: var(--grey-700);
     font-family: inherit;
-    padding: 1.25rem;
+    padding: 1rem 1.5rem;
     font-size: 22px;
     display: flex;
     justify-content: space-between;
@@ -170,7 +170,7 @@ input[type="checkbox"] {
 .bars {
     height: 1.6rem;
     width: .45rem;
-    outline: 1px solid white;
+    outline: 2px solid white;
 }
 
 #generate-btn {
@@ -219,7 +219,7 @@ label {
 #strength-text {
     margin-right: .5rem;
     color: var(--white);
-    font-size: 20px;
+    font-size: 22px;
 
 }
 
@@ -230,6 +230,10 @@ label {
     }
 
     #password-el {
+        font-size: 30px;
+    }
+
+    #char-count {
         font-size: 30px;
     }
 
