@@ -115,16 +115,14 @@ main {
     
 }
 
-#char-range:active {
-    
-    
-}
+
 
 
 
 #range-text {
     display: flex;
     justify-content: space-between;
+    font-size: 18px;
 }
 
 fieldset {
@@ -152,13 +150,13 @@ input[type="checkbox"] {
     background-color: var(--grey-800);
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.75rem;
     gap: 1.5rem;
 }
 
 #strength-container {
     background-color: var(--grey-900);
-    padding: .5rem 1rem;
+    padding: .5rem 1.25rem;
     display: flex; 
     justify-content: space-between;
 }
@@ -166,7 +164,7 @@ input[type="checkbox"] {
 #bars {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: .6rem;
 }
 
 .bars {
@@ -178,7 +176,7 @@ input[type="checkbox"] {
 #generate-btn {
     font-family: inherit;
     font-size: 18px;
-    padding: 1.5rem;
+    padding: 1.25rem;
     border: none;
     background-color: var(--green-200);
     display: flex;
@@ -211,7 +209,7 @@ label {
 
 #char-count {
     color: var(--green-200);
-    font-size: 18px;
+    font-size: 24px;
 }
 
 #strength-container p {
@@ -231,6 +229,14 @@ label {
         font-size: 22px;
     }
 
+    #password-el {
+        font-size: 30px;
+    }
+
+    fieldset label {
+        font-size: 18px;
+    }
+
     body {
         display: flex;
         flex-direction: column;
@@ -244,7 +250,7 @@ label {
 
     main {
         width: 60%;
-        max-width: 450px;
+        max-width: 480px;
         
     }
 
