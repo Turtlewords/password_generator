@@ -105,10 +105,13 @@ function generateRandom(max) {
 }
 
 
-// write function to determine password strength
-
 function generatePassword() {
     let passwordLen = charRange.value;
+
+    if (passwordLen < 8) {
+        alert("Password must be at least 8 characters.")
+        return;
+    }
     let password = "";
     let strengthCount = 0;
 
@@ -161,6 +164,6 @@ function generatePassword() {
     passwordEl.textContent = password;
 }
 
-
+updateCharacterLength()
 
 
